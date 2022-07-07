@@ -14,13 +14,19 @@ btn.addEventListener("click", () => {
 });
 
 function createGrid(size){
+
+    if(size > 100)
+    {
+        alert("size is too big! Choose one smaller!");
+        return;
+    }
+
     let i;
     for ( i = 0; i < size*size; i++)
     {
         const div = document.createElement("div");
         container.appendChild(div);
 
-        div.classList.add("grid-element");
         div.style.width = `${560/size}px`
         div.style.height = `${560/size}px`
 
