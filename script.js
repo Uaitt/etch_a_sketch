@@ -55,9 +55,10 @@ function createGrid(size)
     for(i = 0; i < size*size; i++)
     {
         const gridElement = document.createElement("div");
+
         gridElement.style.width = `${560/size}px`;
         gridElement.style.height = `${560/size}px`;
-
+        gridElement.classList.add("grid-element");
         container.appendChild(gridElement);
 
         //store the node reference to the array
