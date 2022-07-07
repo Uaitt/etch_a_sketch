@@ -12,9 +12,15 @@ body{
     height:560px;
 }
 
+.buttons{
+    width: 560px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
 
 button{
-    padding: 25px;
     font-size: 20px;
-    margin-top: 20px;
+    margin:0 10px 0;
+    flex: 1;
 }
