@@ -1,57 +1,74 @@
-let divArr = [];    //array of divs
+let divArr = [];
+
+//nodes reference
 const container = document.querySelector("#grid-container");
+const btnRainbow = document.querySelector("#rainbow");
+const btnBlack = document.querySelector("#black");
+const btnClear = document.querySelector("#clear");
+const btnNew = document.querySelector("#new");
+
+//auto trigger the rainbow button
+window.onload = function(){
+    document.getElementById("rainbow").click();
+}
+//create the first grid
 let divsQuantity = createGrid(16);
 
-const btn = document.querySelector("button");
-btn.addEventListener("click", () => {
-        let gridSize = prompt("Enter the size of the new grid: ");
-        
-        //remove the grid elements from the container
-        removeGrid(divsQuantity);
+//event listeners for the buttons
+btnNew.addEventListener("click", () => {
+    let newSize = prompt("Enter the new size of the grid (max 100)!");
 
-        //create a new grid
-        divsQuantity = createGrid(gridSize)
+    removeGrid(divsQuantity);
+    divsQuantity = createGrid(newSize);
+
+    document.getElementById("rainbow").click();
 });
 
-function createGrid(size){
+btnRainbow.addEventListener("click", () => {
 
-    if(size > 100)
-    {
-        alert("size is too big! Choose one smaller!");
-        return;
-    }
-
-    let i;
-    for ( i = 0; i < size*size; i++)
-    {
-        const div = document.createElement("div");
-        container.appendChild(div);
-
-        div.style.width = `${560/size}px`
-        div.style.height = `${560/size}px`
-
-        //add an EventListener
-        div.addEventListener("mouseover", () => {
-
+    //apply an addEventListener that triggers a color to every item of the array
+    divArr.forEach( (div) => div.addEventListener("mouseover", () => {
+        
         let randomColor1 = Math.floor(Math.random()* 255);
         let randomColor2 = Math.floor(Math.random()* 255);
         let randomColor3 = Math.floor(Math.random()* 255);
-    
-        div.style.backgroundColor = `RGB(${randomColor1}, ${randomColor2},${randomColor3} )`;
 
-        //store every child in the array
-        divArr[i] = div;
-    
-        });
+        div.style.backgroundColor = `RGB(${randomColor1}, ${randomColor2},${randomColor3} )`;
+    }))
+});
+
+btnBlack.addEventListener("click", () => {
+
+    divArr.forEach( (div) => div.addEventListener("mouseover", () => {
+
+        div.style.backgroundColor = "black";
+    }))
+});
+
+btnClear.addEventListener("click", () => divArr.forEach( (div) => div.style.backgroundColor = "white"))
+
+
+
+function createGrid(size)
+{
+    let i;
+    for(i = 0; i < size*size; i++)
+    {
+        const gridElement = document.createElement("div");
+        gridElement.style.width = `${560/size}px`;
+        gridElement.style.height = `${560/size}px`;
+
+        container.appendChild(gridElement);
+
+        //store the node reference to the array
+        divArr[i] = gridElement;
     }
 
     return i;
 }
 
-function removeGrid(divsQuantity)
+function removeGrid(quantity)
 {
-    let i;
-
-    for( i = 0; i < divsQuantity; i++)
-        container.removeChild(divArr[i]);   
+    for(let i = 0; i < quantity; i++)
+        container.removeChild(divArr[i]);   //no need to pop items from the array as they will be overwritten later on
 }
