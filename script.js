@@ -1,4 +1,4 @@
-let divArr = [];
+let divArr = [];    //array of divs
 const container = document.querySelector("#grid-container");
 let divsQuantity = createGrid(16);
 
@@ -19,12 +19,15 @@ function createGrid(size){
     {
         const div = document.createElement("div");
         container.appendChild(div);
+
         div.classList.add("grid-element");
+        div.style.width = `${560/size}px`
+        div.style.height = `${560/size}px`
 
         //add an EventListener
         div.addEventListener("mouseover", () => div.style.backgroundColor = "black");
 
-        //store every child in an array
+        //store every child in the array
         divArr[i] = div;
     }
 
@@ -36,5 +39,5 @@ function removeGrid(divsQuantity)
     let i;
 
     for( i = 0; i < divsQuantity; i++)
-        container.removeChild(divArr[i]);
+        container.removeChild(divArr[i]);   
 }

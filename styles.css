@@ -9,12 +9,9 @@ body{
     display: flex;
     flex-wrap: wrap;
     width:560px;
+    height:560px;
 }
 
-.grid-element{
-    height:35px;
-    width:35px;
-}
 
 button{
     padding: 25px;
