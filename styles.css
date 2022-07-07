@@ -15,7 +15,3 @@ body{
     height:35px;
     width:35px;
 }
-
-.grid-element:hover{
-    background-color: black;
-}

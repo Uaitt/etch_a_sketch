@@ -6,4 +6,8 @@ for (let i = 0; i < 256; i++)
     const div = document.createElement("div");
     container.appendChild(div);
     div.classList.add("grid-element");
+
+    //add an EventListener
+    div.addEventListener("mouseover", () => div.style.backgroundColor = "black");
 }
+
