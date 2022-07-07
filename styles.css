@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#grid-container{
+    border:4px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    width:560px;
+}
+
+.grid-element{
+    height:35px;
+    width:35px;
+}
+
+.grid-element:hover{
+    background-color: black;
+}
