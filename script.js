@@ -31,10 +31,18 @@ function createGrid(size){
         div.style.height = `${560/size}px`
 
         //add an EventListener
-        div.addEventListener("mouseover", () => div.style.backgroundColor = "black");
+        div.addEventListener("mouseover", () => {
+
+        let randomColor1 = Math.floor(Math.random()* 255);
+        let randomColor2 = Math.floor(Math.random()* 255);
+        let randomColor3 = Math.floor(Math.random()* 255);
+    
+        div.style.backgroundColor = `RGB(${randomColor1}, ${randomColor2},${randomColor3} )`;
 
         //store every child in the array
         divArr[i] = div;
+    
+        });
     }
 
     return i;
