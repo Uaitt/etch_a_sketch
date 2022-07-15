@@ -13,28 +13,43 @@ body{
     border: 2px solid rgb(94,92,92);
     display: flex;
     flex-wrap: wrap;
-    width:400px;
-    height:490px;
+    width:360px;
+    height:460px;
     border-radius: 5px;
+    background-color: rgb(237, 244, 248);
+    margin-top: 20px;
+}
+
+#outside-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border:2px solid rgb(94,92,92);
+    width:430px;
+    height: 690px;
+    border-radius: 12px;
 }
 
 .buttons{
-    width: 570px;
+    width: 420px;
+    height: 240px;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 20px;
-    height:60px;
 }
 
 button{
-    font-size: 20px;
-    margin:0 10px 0;
-    flex: 1;
-    color: rgb(147, 118, 199);
-    background-color: white;  
-    border: 3px solid rgb(147, 118, 199);
-    font-weight: 700;
+    width: 130px;
+    height: 75px;
+    font-size: 22px;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-radius: 12px;
+    border:2px solid rgb(94,92,92);
 }
+
 
 h1{
     font-size: 40px;
