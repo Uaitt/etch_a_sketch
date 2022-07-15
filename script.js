@@ -11,12 +11,14 @@ const btnNew = document.querySelector("#new");
 window.onload = function(){
     document.getElementById("black").click();
 }
+
+let newSize = 16;
 //create the first grid
-let divsQuantity = createGrid(16);
+let divsQuantity = createGrid(newSize);
 
 //event listeners for the buttons
 btnNew.addEventListener("click", () => {
-    let newSize = prompt("Enter the new size of the grid (max 100)!");
+    newSize = prompt("Enter the new size of the grid (max 100)!");
 
     removeGrid(divsQuantity);
     divsQuantity = createGrid(newSize);
@@ -45,7 +47,12 @@ btnBlack.addEventListener("click", () => {
     }))
 });
 
-btnClear.addEventListener("click", () => divArr.forEach( (div) =>    div.style.backgroundColor = "rgb(237, 244, 248)"))
+btnClear.addEventListener("click", () => {
+    removeGrid(divsQuantity);
+    createGrid(newSize);
+
+    document.getElementById("black").click();
+})
 
 
 
