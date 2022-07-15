@@ -10,12 +10,12 @@ body{
 }
 
 #grid-container{
-    border:3px solid rgb(147, 118, 199);
+    border: 2px solid rgb(94,92,92);
     display: flex;
     flex-wrap: wrap;
-    width:560px;
-    height:560px;
-    background-color: white;
+    width:400px;
+    height:490px;
+    border-radius: 5px;
 }
 
 .buttons{
