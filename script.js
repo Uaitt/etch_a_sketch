@@ -9,7 +9,7 @@ const btnNew = document.querySelector("#new");
 
 //auto trigger the rainbow button
 window.onload = function(){
-    document.getElementById("rainbow").click();
+    document.getElementById("black").click();
 }
 //create the first grid
 let divsQuantity = createGrid(16);
@@ -21,7 +21,7 @@ btnNew.addEventListener("click", () => {
     removeGrid(divsQuantity);
     divsQuantity = createGrid(newSize);
 
-    document.getElementById("rainbow").click();
+    document.getElementById("black").click();
 });
 
 btnRainbow.addEventListener("click", () => {
