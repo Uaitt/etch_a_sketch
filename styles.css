@@ -85,3 +85,19 @@ h1{
     color: rgb(172, 145, 223);  
 }
 
+footer {
+    font-size: 24px;
+    margin-top: 90px;
+    color: rgb(83, 80, 80);
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.fa-github {
+    color:rgb(83, 80, 80);
+    font-size: 50px;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 5px;
+}
